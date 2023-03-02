@@ -6,7 +6,7 @@
 using namespace std;
 
 #define m1in(a, b) ((a) > (b) ? (b) : (a))
-unsigned int cntX[130];
+unsigned int cntX[126];
 
 int main(){
 	ios::sync_with_stdio(false);
@@ -16,12 +16,12 @@ int main(){
 	int N;
 	cin >> N;
 
-	for (int i = 1; i < 130; ++i)
+	for (int i = 1; i < 126; ++i)
 	{
 		cntX[i] = cntX[i - 1] + ((i * i) + i) / 2;
 	}
 
-	vector<unsigned int> DP(N + 1, 987654321);
+	vector<unsigned int> DP(N + 1, -1);
 	DP[0] = 0;
 
 	unsigned int currCntX;
@@ -29,10 +29,9 @@ int main(){
 	{
 		int len = 1;
 		while (true) {
-			currCntX = cntX[len];
-			if (currCntX > i) break;
+			if (cntX[len] > i) break;
 
-			DP[i] = m1in(DP[i], DP[i - currCntX] + 1);
+			DP[i] = m1in(DP[i], DP[i - cntX[len]] + 1);
 			len++;
 		}
 	}
