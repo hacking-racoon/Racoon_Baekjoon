@@ -9,10 +9,6 @@ using namespace std;
 typedef unsigned long long ull;
 ull cntX[130];
 
-ull calcCntX(ull len)
-{
-	return ((len * len) + len) / 2;
-}
 int main(){
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
@@ -23,7 +19,7 @@ int main(){
 
 	for (int i = 1; i < 130; ++i)
 	{
-		cntX[i] = cntX[i - 1] + calcCntX(i);
+		cntX[i] = cntX[i - 1] + ((i * i) + i) / 2;
 	}
 
 	vector<ull> DP(N + 1, 987654321);
