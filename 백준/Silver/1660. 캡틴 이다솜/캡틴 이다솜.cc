@@ -6,8 +6,7 @@
 using namespace std;
 
 #define m1in(a, b) ((a) > (b) ? (b) : (a))
-typedef unsigned long long ull;
-ull cntX[130];
+unsigned int cntX[130];
 
 int main(){
 	ios::sync_with_stdio(false);
@@ -22,10 +21,10 @@ int main(){
 		cntX[i] = cntX[i - 1] + ((i * i) + i) / 2;
 	}
 
-	vector<ull> DP(N + 1, 987654321);
+	vector<unsigned int> DP(N + 1, 987654321);
 	DP[0] = 0;
 
-	ull currCntX;
+	unsigned int currCntX;
 	for (int i = 1; i <= N; ++i)
 	{
 		int len = 1;
