@@ -26,7 +26,7 @@ int main() {
 	cin.tie(nullptr);
 	cout.tie(nullptr);
 
-	int K;
+	ull K;
 	cin >> K;
 
 	ull currIdx = 1;
@@ -53,7 +53,7 @@ int main() {
 
 	for (const auto& elem : combs)
 	{
-		for (int i = 0; i < elem; ++i)
+		for (ull i = 0; i < elem; ++i)
 		{
 			if (i == 0)
 			{
