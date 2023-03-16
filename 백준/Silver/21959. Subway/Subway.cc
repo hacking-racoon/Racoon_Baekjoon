@@ -29,11 +29,11 @@ int main() {
 	int K;
 	cin >> K;
 
-	int currIdx = 1;
-	int currNode;
-	int ret = 0;
+	ull currIdx = 1;
+	ull currNode;
+	ull ret = 0;
 	ull currComb;
-	vector<int> combs;
+	vector<ull> combs;
 	while (K != 0)
 	{
 		currComb = 1;
