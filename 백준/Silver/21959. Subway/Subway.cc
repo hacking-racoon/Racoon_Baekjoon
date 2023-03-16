@@ -15,7 +15,7 @@ using namespace std;
 
 typedef unsigned long long ull;
 
-ull inline nC2(int n)
+ull inline nC2(ull n)
 {
 	return n * (n - 1) / 2;
 }
